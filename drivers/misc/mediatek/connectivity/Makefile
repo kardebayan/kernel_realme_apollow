@@ -76,19 +76,23 @@ endif
         export BT_PLATFORM=6833
         export CFG_FM_CHIP_ID=6833
 
+        export CFG_FM_CHIP_ID=$(MTK_PLATFORM_ID)
+        export CFG_FM_CHIP=mt6631
+
         # Do build-in for xxx.c checking
         subdir-ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
         subdir-ccflags-y += -D MTK_WCN_BUILT_IN_DRIVER
         obj-y += common/
         obj-y += wlan/adaptor/
         obj-y += wlan/core/gen4m/
+
+	    # FMRadio
+	    obj-$(CONFIG_MTK_FMRADIO) += fmradio/
+
     endif
 
 # Bluetooth
 obj-$(CONFIG_MTK_COMBO_BT) += bt/mt66xx/wmt/
-
-# FMRadio
-obj-$(CONFIG_MTK_FMRADIO) += fmradio/
 
 # GPS
 obj-$(CONFIG_MTK_COMBO_GPS) += gps/
