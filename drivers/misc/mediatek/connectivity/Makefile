@@ -65,9 +65,16 @@ endif
 
         # for gen4m options
         export CONFIG_MTK_COMBO_WIFI_HIF=axi
-        export MTK_COMBO_CHIP=CONNAC
-        export WLAN_CHIP_ID=6765
+        export MTK_COMBO_CHIP=SOC2_1X1
+        export WLAN_CHIP_ID=6833
+        export CONNAC_VER=2_0
         export MTK_ANDROID_WMT=y
+        export MTK_ANDROID_EMI=y
+        export WIFI_IP_SET=1
+        export WIFI_ECO_VER=1
+        export MTK_WLAN_SERVICE=yes
+        export BT_PLATFORM=6833
+        export CFG_FM_CHIP_ID=6833
 
         # Do build-in for xxx.c checking
         subdir-ccflags-y += -D MTK_WCN_REMOVE_KERNEL_MODULE
